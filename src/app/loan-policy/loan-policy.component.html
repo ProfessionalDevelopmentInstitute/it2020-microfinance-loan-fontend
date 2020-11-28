@@ -1,0 +1,23 @@
+<div class="w3-container content box">
+  <h1 class="w3-center" style="font-weight: bold;"> Microfinance And Loan </h1>
+
+  <div >
+    <h2> Create Guarantor</h2>
+   <form class="w3-form" ngForm #myForm="ngForm" (ngSubmit)="submit();">
+      <label class="field"><b>Loan Amount</b></label>
+      <input class="w3-input w3-border-orange field" type="text" placeholder="Enter Loan Amount" name="loanAmount" ngModel required><br>
+      <label class="field"><b>Loan Interest</b></label>
+      <input class="w3-input w3-border-orange field" type="text" placeholder="Enter Loan Interest" name="loanInterest" ngModel required><br>
+
+      <label class="field"><b>Month</b></label>
+      <input class="w3-input w3-border-orange field" type="text" placeholder="Enter Month" name="months" ngModel required><br>
+     <div class="w3-red" *ngIf=" myForm.invalid && myForm.touched">
+       * are required !
+     </div>
+      <div>
+        <button class="w3-button w3-margin-right "   type="submit" [disabled]="myForm.invalid && myForm.touched">Add </button>
+        <button class="w3-button w3-margin-left"  type="button" routerLink="/main" routerLinkActive="active"> Cancle</button>
+      </div>
+    </form>
+  </div>
+</div>

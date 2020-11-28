@@ -1,0 +1,62 @@
+
+
+<div class="w3-container w3-center header ">
+  Microfinance And Loan Management System
+</div>
+
+<div class="w3-container content box" >
+  <div class=" left_content">
+    <button  class="w3-button box" id="btn" style="background-color: #FF80B3; ">
+      <img src="assets/img3.png" id="image" width="50px" height="50px" >
+      <h1 style="font-size: 20px;font-weight: bold" >Customer</h1>
+      <button type="submit" class="w3-button w3-round-xlarge " routerLink="/customer" routerLinkActive="active"> Add Customer</button>&nbsp;
+      <button type="submit" class="w3-button w3-round-xlarge" > Details</button><br><br>
+      <input class="w3-input w3-border-deep-orange" type="text" style="width: 200px;display: inline-block;" >&nbsp;
+      <button type="submit"  class="w3-button " value="Search" style="border-radius: 25px;">Search</button>
+    </button>
+    <br>
+    <button class="w3-button box" id="btn"  style="background-color: #BF80FF;" >
+      <img src="assets/img4.png" id="image" width="50px" height="50px" >
+      <h1 style="font-size: 20px;font-weight: bold" > Guarantor  </h1>
+      <button type="submit" class="w3-button w3-round-xlarge" routerLink="/guarantor" routerLinkActive="active"> Add Guarantor</button>&nbsp;
+      <button type="submit" class="w3-button w3-round-xlarge" routerLink="/guarantor-list" routerLinkActive="active"> Details</button>
+    <br><br>
+      <form [formGroup]="myForm" (ngSubmit)="click();">
+        <input class="w3-input w3-border-deep-orange" type="text" style="width: 200px;display: inline-block;" formControlName="guarantorName">&nbsp;
+        <button type="submit"  class="w3-button" value="Search" style="border-radius: 25px;" [disabled]="myForm.invalid">Search</button>
+      </form>
+
+
+    </button><br>
+    <button class="w3-button box" id="btn"  style="background-color:  #9999FF ;">
+      <img src="assets/img5.png" id="image" width="50px" height="50px" >
+      <h1 style="font-size: 20px;font-weight: bold" > Member </h1>
+      <button type="submit" class="w3-button w3-round-xlarge" routerLink="/member" routerLinkActive="active"> Add Member</button>&nbsp;
+      <button type="submit" class="w3-button w3-round-xlarge" routerLink="/member-list" routerLinkActive="active"> Details</button>
+    <br><br>
+      <input class="w3-input w3-border-deep-orange" type="text" style="width: 200px;display: inline-block;">&nbsp;
+      <button type="submit"  class="w3-button" value="Search" style="border-radius: 25px;">Search</button>
+    </button>
+  </div>
+
+  <div class="right_content">
+    <button class="w3-button box" id="btn"  style="background-color:   #B3D9FF ;">
+      <img src="assets/img7.png" id="image" width="50px" height="50px" >
+      <h1 style="font-size: 20px;font-weight: bold" > LoanPayment Policy </h1>
+      <button type="submit" class="w3-button w3-round-xlarge w3-margin-right" routerLink="/loan-policy" routerLinkActive="active"> Add </button>
+      <button type="submit" class="w3-button w3-round-xlarge" routerLink="/loanPolicy-list" routerLinkActive="active"> Details</button>
+    </button><br>
+    <button class="w3-button box" id="btn"  style="background-color:   #FFB399 ;">
+      <img src="assets/img2.png " id="image" width="50px" height="50px" >
+      <h1 style="font-size: 20px;font-weight: bold" >Staff </h1>
+      <button type="submit" class="w3-button w3-round-xlarge w3-margin-right" routerLink="/staff" routerLinkActive="active"> Add Staff</button>
+      <button type="submit" class="w3-button w3-round-xlarge" > Details</button>
+    </button><br>
+    <button class="w3-button box" id="btn"  style="background-color:   #D2F08C ;">
+      <img src="assets/icons8-more-info-48.png " id="image" width="50px" height="50px" >
+      <h1 style="font-size: 20px;font-weight: bold" > Loan Details</h1>
+      <button type="submit" class="w3-button w3-round-xlarge"> Details</button>
+    </button>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="w3-padding">
+  <h1> Guarantor List</h1>
+  <form class="w3-form">
+  <div  *ngFor="let g of guarantors" class="w3-card w3-margin-bottom">
+
+    <div class="w3-container">
+      <p>Name :{{g.guarantorName}}</p>
+      <p>NRC :{{g.guarantorNRC}}</p>
+      <p>Address :{{ g.guarantorAddress}}</p>
+      <p>Phone :{{g.guarantorPhone}}</p>
+      <p>Occupation :{{g.guarantorOccupation}}</p>
+      <button type="submit" value="Update" class="w3-button" routerLink="/guarantor-update/{{g.id}}" routerLinkActive="active">Update</button>
+      <button type="submit" value="Back" routerLink="/main" routerLinkActive="active" class="w3-button w3-margin-left"> Back</button>
+    </div>
+  </div>
+  </form>
+</div>
+
+<div class="w3-half">
+  <router-outlet></router-outlet>
+</div>
+

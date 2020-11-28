@@ -1,0 +1,18 @@
+<div class="w3-padding">
+  <h1> Member List</h1>
+  <form>
+  <div id="studentElemnet" *ngFor="let m of members" class="w3-card w3-margin-bottom">
+
+    <div class="w3-container">
+      <p> Group Name : {{m.memberGroupName}}</p>
+      <p> Group Type : {{m.memberType}}</p>
+      <button type="submit" class="w3-button" value="update" routerLink="/member-update/{{m.id}}" routerLinkActive="active"> Update</button>
+      <button class="w3-button w3-margin-left" type="submit" value="back" routerLink="/main" routerLinkActive="active">Back</button>
+    </div>
+  </div>
+  </form>
+</div>
+
+<div class="w3-half">
+  <router-outlet></router-outlet>
+</div>
