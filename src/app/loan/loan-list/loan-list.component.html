@@ -1,0 +1,36 @@
+<div class="w3-padding">
+  <h1> Loan List</h1>
+  <form>
+    <table class="w3-table w3-striped w3-border">
+      <tr>
+        <th>ID</th>
+        <th>Loanded Date</th>
+        <th>Customer_Id</th>
+        <th>Guarantor_Id</th>
+        <th>LoanPayment_Id</th>
+        <th>Staff_Id</th>
+        <th></th>
+
+      </tr>
+      <tr *ngFor="let l of loans">
+        <td>{{l.id}}</td>
+        <td>{{l.loandedDate}}</td>
+        <td>{{l.customerId}}</td>
+        <td>{{l.guarantorId}}</td>
+        <td>{{l.loanPaymentPolicyId}}</td>
+        <td>{{l.staffId}}</td>
+        <td>
+          <button type="submit" value="Back" routerLink="/main" routerLinkActive="active" class="w3-button w3-black w3-margin-left"> Back </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</div>
+
+<div class="w3-half">
+  <router-outlet></router-outlet>
+</div>
+
+
+

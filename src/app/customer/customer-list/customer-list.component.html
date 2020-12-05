@@ -1,0 +1,40 @@
+<div class="w3-padding">
+  <h1> Customer List</h1>
+  <form>
+    <table class="w3-table w3-striped w3-border">
+      <tr>
+        <th>Customer ID</th>
+        <th>Member ID</th>
+        <th>Name</th>
+        <th>NRC</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Occupation</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tr *ngFor="let c of customers">
+        <td>{{c.id}}</td>
+        <td>{{c.memberId}}</td>
+        <td>{{c.customerName}}</td>
+        <td>{{c.customerNRCNo}}</td>
+        <td>{{c.customerAddress}}</td>
+        <td>{{c.customerPhone}}</td>
+        <td>{{c.customerOccupation}}</td>
+        <td>
+          <button type="submit" value="Update" class="w3-button w3-light-green">Update</button>
+        </td>
+        <td>
+          <button type="submit" value="Back" routerLink="/main" routerLinkActive="active" class="w3-button w3-black w3-margin-left"> Back </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</div>
+
+<div class="w3-half">
+  <router-outlet></router-outlet>
+</div>
+
+
