@@ -8,18 +8,18 @@
   <div class="w3-container w3-center " style="font-weight: bold;font-size: large;">
     Login
   </div>
-  <div class="w3-section">
-    <label class="field"><b>Username</b></label>
-    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter Username" name="usrname" required><br>
-    <label class="field"><b>Password</b></label>
-    <input class="w3-input w3-border-orange field" type="password" placeholder="Enter Password" name="psw" required><br>
-    <div class="w3-center">
-      <button class="w3-button" id="btn" type="submit" routerLink="/main" routerLinkActive="active">Login</button><br>
+  <form [formGroup]="loginForm" (ngSubmit)="summit()">
+    <div class="w3-section">
+      <label class="field"><b>Email</b></label>
+      <input class="w3-input w3-border-orange field" type="text" placeholder="Enter Email" formControlName="email" required><br>
+      <label class="field"><b>Password</b></label>
+      <input class="w3-input w3-border-orange field" autocomplete="on" type="password" placeholder="Enter Password" formControlName="password" required><br>
+      <div class="w3-center">
+        <button class="w3-button btn" type="submit" [disabled]="loginForm.invalid">Login</button><br>
+      </div>
     </div>
+  </form>
 
-    <button  type="button" class="w3-button" id="btn" >Cancel</button>
-    <span class="w3-right w3-padding w3-hide-small"> <a href="#"> Forgot password?</a></span>
-  </div>
 </div>
 
 

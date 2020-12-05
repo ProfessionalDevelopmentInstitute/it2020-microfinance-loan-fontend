@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MemberListService} from '../service/member-list.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Member} from '../model/member';
 
 
 @Component({
@@ -24,11 +25,7 @@ export class MemberComponent implements OnInit {
   }
 
   submit(): void {
-    const members: Member = new class implements Member {
-      id: number;
-      memberGroupName: string;
-      memberType: string;
-    }
+    const members: Member =  new Member(this.myForm.value.id , this.myForm.value.memberGroupName, this.myForm.value.memberType);
     console.log(members);
 
     this.mService.createMembers(members).subscribe(
@@ -45,8 +42,4 @@ export class MemberComponent implements OnInit {
     );
   }
 }
-export interface Member{
-  id: number;
-  memberGroupName: string;
-  memberType: string;
-}
+

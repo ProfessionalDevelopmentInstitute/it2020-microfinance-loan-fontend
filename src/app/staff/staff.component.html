@@ -3,28 +3,44 @@
 
   <div class="w3-section w3-border w3-padding-16" style="padding-left:200px;">
     <h2> Create Staff</h2>
-    <form >
+    <form class="w3-form" [formGroup]="registerForm" (ngSubmit)="submit();">
     <label class="field"><b> Name</b></label>
-    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  Name" name="usrname" required><br>
+    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  Name" formControlName="staffName"   required><br>
     <label class="field"><b>Address</b></label>
-    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  Address" name="address" required><br>
+    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  Address" formControlName="staffAddress"  required><br>
 
     <label class="field"><b>NRC No</b></label>
-    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  NRC" name="nrcno" required><br>
+    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  NRC" formControlName="staffNRCNo"  required><br>
 
     <label class="field"><b>Phone </b></label>
-    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  Phone" name="phone" required><br>
+    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter  Phone" formControlName="staffPhone"  required><br>
 
     <label class="field"><b>Email</b></label>
-    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter email" name="email" required><br>
+    <input class="w3-input w3-border-orange field" type="text" placeholder="Enter email" formControlName="staffEmail"  required><br>
 
-    <label class="field"><b>Password</b></label>
-    <input class="w3-input w3-border-orange field" type="password" placeholder="Enter password" name="password" required><br>
+<!--    <label class="field"><b>Password</b></label>-->
+<!--    <input class="w3-input w3-border-orange field" type="password" placeholder="Enter password" formControlName="passwords"  required><br>-->
 
+      <div formGroupName="passwords">
+        <label class="field"><b>Password</b></label>
+        <p>
+          <input type="text" class="w3-input w3-border" placeholder="Password" formControlName="password"/>
+        </p>
+        <p>
+          <input type="text" class="w3-input w3-border" placeholder="Confirm Password" formControlName="confirmPassword"/>
+        </p>
+      </div>
+      <p class="w3-container w3-text-red" *ngIf="registerForm.touched && registerForm.controls.passwords.errors !== null && registerForm.controls.passwords.errors.PasswordNotMergeError">
+        * password and confirm password are not marge.
+      </p>
+      <label class="field"><b>Role</b></label>
+      <select class="w3-select w3-border" name="Role" formControlName="role">
+        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+      </select>
     <div>
-      <button class="w3-button w3-margin-right " style="width: 100px;"  type="submit">Add </button>
-      <button class="w3-button " style="width: 100px;" type="button"> Cancle</button>
-      <button class="w3-button " type="submit" style="float: right;margin-right: 10px;width: 100px;" > Back </button>
+      <button class="w3-button w3-margin-right " [disabled]="registerForm.invalid && registerForm.touched" type="submit">Add </button>
+      <button class="w3-button " style="width: 100px;" type="button" routerLink="/main" routerLinkActive="active"> Cancle</button>
+
     </div>
     </form>
   </div>

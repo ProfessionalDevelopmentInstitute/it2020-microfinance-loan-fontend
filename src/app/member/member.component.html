@@ -2,13 +2,13 @@
   <h1 class="w3-center " style="font-weight: bold;"> Microfinance And Loan </h1>
 <div class="w3-padding-32">
   <h2> Create Member</h2>
-  <form class="w3-form" ngForm [formGroup]="myForm" (ngSubmit)="submit()">
+  <form class="w3-form"  [formGroup]="myForm" (ngSubmit)="submit();">
   <label class="field"><b> Group Name</b></label>
   <input class="w3-input w3-border field" type="text" placeholder="Enter Group Name" formControlName="memberGroupName"  required><br>
   <label class="field"><b>Group Type</b></label><br>
-  <input class="w3-radio" type="radio" formControlName="memberType"  value="Group" ngModel checked>
+  <input class="w3-radio" type="radio" formControlName="memberType"  value="Group"  checked>
   <label class="w3-margin-right">Group</label>&nbsp;
-  <input class="w3-radio" type="radio" formControlName="memberType" value="Individual" ngModel>
+  <input class="w3-radio" type="radio" formControlName="memberType" value="Individual" >
   <label>Individual</label>
     <div class="w3-red" *ngIf="myForm.invalid && myForm.touched">
       * are required!

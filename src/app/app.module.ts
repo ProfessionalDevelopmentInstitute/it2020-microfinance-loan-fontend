@@ -21,6 +21,10 @@ import { LoanPolicyListComponent } from './loan-policy/loan-policy-list/loan-pol
 import { MemberListComponent } from './member/member-list/member-list.component';
 import { UpdateGuarantorComponent } from './guarantor/update-guarantor/update-guarantor.component';
 import { MemberUpdateComponent } from './member/member-update/member-update.component';
+import { CustomerListComponent } from './customer/customer-list/customer-list.component';
+import { LoanComponent } from './loan/loan.component';
+import { LoanListComponent } from './loan/loan-list/loan-list.component';
+import { StaffListComponent } from './staff/staff-list/staff-list.component';
 
 
 
@@ -43,6 +47,10 @@ import { MemberUpdateComponent } from './member/member-update/member-update.comp
     MemberListComponent,
     UpdateGuarantorComponent,
     MemberUpdateComponent,
+    CustomerListComponent,
+    LoanComponent,
+    LoanListComponent,
+    StaffListComponent,
   ],
   imports: [
     BrowserModule,

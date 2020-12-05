@@ -1,16 +1,28 @@
 <div class="w3-padding">
   <h1> Loan Policy List</h1>
-  <div  *ngFor="let l of loanPolicies" class="w3-card w3-margin-bottom">
+  <table class="w3-table w3-striped w3-border">
+    <tr>
+      <th>ID</th>
+      <th>Loan Amount</th>
+      <th>Loan Interest</th>
+      <th>Months </th>
+      <th>Monthly Payment </th>
+      <th></th>
 
-    <div class="w3-container">
-      <p>Loan Amount :{{l.loanAmount}}</p>
-      <p>Loan Interest :{{l.loanInterest}}</p>
-      <p>Months :{{ l.months}}</p>
-      <p>Monthly Payment :{{l.monthlyPayment}}</p>
-      <button type="submit" value="Back" routerLink="/main" routerLinkActive="active" class="w3-button w3-margin-left"> Back</button>
-    </div>
+    </tr>
+    <tr *ngFor="let l of loanPolicies" >
+      <td>{{l.id}}</td>
+      <td>{{l.loanAmount}}</td>
+      <td>{{l.loanInterest}}</td>
+      <td>{{ l.months}}</td>
+      <td>{{l.monthlyPayment}}</td>
+      <td>
+        <button type="submit" value="Back" routerLink="/main" routerLinkActive="active" class="w3-button w3-black w3-margin-left"> Back</button>
+      </td>
+    </tr>
+  </table>
   </div>
-</div>
+
 
 <div class="w3-half">
   <router-outlet></router-outlet>
