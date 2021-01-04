@@ -1,28 +1,31 @@
 <div class="w3-padding">
-  <h1> Member List</h1>
-  <form >
-<table class="w3-table w3-striped w3-border">
+  <h1 style="padding-left: 30px;"> Member List</h1>
+  <div class=" w3-container">
+
+    <form class="w3-form">
+      <button type="submit" value="add" class="w3-button" style="border-radius: 25px;background-color: #e07b39;" routerLink="/member" routerLinkActive="active">Add member</button>
+    </form>
+  </div>
+<br>
+<table class="w3-table w3-striped w3-border content" >
   <tr>
-    <th>ID</th>
+    <th>Member ID</th>
     <th>Group Name</th>
     <th>Group Type</th>
-    <th></th>
     <th></th>
   </tr>
   <tr *ngFor="let m of members" >
     <td>{{m.id}}</td>
     <td>{{m.memberGroupName}}</td>
     <td>{{m.memberType}}</td>
-    <td>
-      <button type="submit" class="w3-button w3-light-green" value="update" routerLink="/member-update/{{m.id}}" routerLinkActive="active"> Update</button>
-    </td>
-    <td>
+    <td >
+      <button type="submit" class="w3-button w3-margin-left w3-light-green"  value="update" routerLink="/member-update/{{m.id}}" routerLinkActive="active"> Update</button>
       <button class="w3-button w3-margin-left w3-black" type="submit" value="back" routerLink="/main" routerLinkActive="active">Back</button>
-
     </td>
-
   </tr>
 </table>
+</div>
 <div class="w3-half">
   <router-outlet></router-outlet>
 </div>
+

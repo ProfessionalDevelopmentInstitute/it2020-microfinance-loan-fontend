@@ -1,7 +1,11 @@
 <div class="w3-padding">
-  <h1> Staff List</h1>
-  <form>
-    <table class="w3-table w3-striped w3-border">
+  <h1 style="padding-left: 10px;"> Staff List</h1>
+    <div class="w3-container">
+      <button type="submit" value="add" class="w3-button" style="border-radius: 25px;background-color: #e07b39;" routerLink="/staff" routerLinkActive="active">Add staff</button>
+    </div>
+  </div>
+  <br>
+  <table class="w3-table w3-striped w3-border content">
       <tr>
         <th>ID</th>
         <th>Name</th>
@@ -26,9 +30,6 @@
         </td>
       </tr>
     </table>
-  </form>
-
-</div>
 
 <div class="w3-half">
   <router-outlet></router-outlet>

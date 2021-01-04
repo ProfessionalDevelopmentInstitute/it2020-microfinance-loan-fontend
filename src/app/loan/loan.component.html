@@ -1,1 +1,41 @@
-<p>work</p>
+<div class="w3-container content box">
+  <h1 class="w3-center" style="font-weight: bold;"> Microfinance And Loan </h1><br>
+
+  <div style="margin-left: 400px;">
+    <h2> Create Loan  </h2>
+
+    <form class="w3-form" [formGroup]="myForm" (ngSubmit)="click()">
+      <div class="w3-container">
+        <label class="field"><b> Date</b></label>
+        <input class="w3-input w3-border-orange field input" type="text" placeholder="Enter Date" formControlName="loandedDate"  required> <br>
+      </div>
+  <div class="w3-container">
+    <label class="field"><b>Guarantor</b> </label><br>
+    <select class="w3-select input" formControlName="guarantor" >
+      <option *ngFor="let g of guarantor; let x = index" [value]="x" >{{g.id}}</option>
+    </select>
+  </div>
+  <div class="w3-container">
+    <label class="field"><b>Customer</b> </label><br>
+    <select class="w3-select input" formControlName="customer" >
+      <option *ngFor="let c of customer; let x = index" [value]="x" >{{c.id}}</option>
+    </select>
+  </div>
+  <div class="w3-container">
+    <label class="field"><b>Loan Payment</b> </label><br>
+    <select class="w3-select input" formControlName="loanPaymentPolicy" >
+      <option *ngFor="let la of loanPaymentPolicy ; let x = index" [value]="x" >{{la.id}}</option>
+    </select>
+  </div>
+  <div class="w3-container">
+    <label class="field"><b>Staff</b> </label><br>
+    <select class="w3-select input" formControlName="staff" >
+      <option *ngFor="let s of staff ; let x = index" [value]="x" >{{s.id}}</option>
+    </select>
+  </div><br>
+  <div class="w3-container">
+    <button class="w3-button w3-margin-right "   type="submit" >Add </button>
+    <button class="w3-button "  type="button" routerLink="/main" routerLinkActive="active"> Cancle</button>
+
+  </div>
+</form>

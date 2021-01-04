@@ -12,15 +12,15 @@ export class MemberListService {
 
   constructor(private http: HttpClient) { }
   getMemberList(): Observable<ResponseModel>{
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/members');
+    return this.http.get<ResponseModel>('http://localhost:9000/api/members');
   }
   MemberById(id: number): Observable<ResponseModel>{
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/members/' + id);
+    return this.http.get<ResponseModel>('http://localhost:9000/api/members/' + id);
   }
   createMembers(member: Member): Observable<any>{
-    return this.http.post ('http://localhost:9000/mdls/member' , member);
+    return this.http.post ('http://localhost:9000/api/member' , member);
   }
   updateMember(member: Member): Observable<any> {
-    return this.http.put('http://localhost:9000/mdls/members/', member);
+    return this.http.put('http://localhost:9000/api/members/', member);
   }
 }

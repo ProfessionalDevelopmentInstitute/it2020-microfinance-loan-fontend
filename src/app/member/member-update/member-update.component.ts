@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Member} from '../../model/member';
 import {MemberListService} from '../../service/member-list.service';
@@ -15,8 +15,8 @@ export class MemberUpdateComponent implements OnInit {
 
   constructor(private router: Router, private mService: MemberListService, private route: ActivatedRoute) {
     this.myForm = new FormGroup({
-      memberGroupName : new FormControl(null),
-      memberType : new FormControl(null)
+      memberGroupName : new FormControl('', Validators.required),
+      memberType : new FormControl('', Validators.required)
       }
     );
   }
@@ -40,10 +40,11 @@ export class MemberUpdateComponent implements OnInit {
     );
   }
   submit(): void {
-    const member: Member = new Member(this.id,
-      this.myForm.value.memberGroupName,
-      this.myForm.value.memberType
-    );
+    const member: Member = {
+      id: this.id,
+      memberGroupName: this.myForm.value.memberGroupName,
+      memberType: this.myForm.value.memberType
+    };
     this.mService.updateMember(member).subscribe(
       value => {
         console.log(value);

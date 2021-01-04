@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StaffService} from '../../service/staff.service';
 import {StaffModel} from '../../model/StaffModel';
+import {ResponseModel} from '../../model/response.model';
 
 @Component({
   selector: 'app-staff-list',
@@ -15,7 +16,7 @@ export class StaffListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.staffService.getAll().subscribe(
+    this.staffService.getStaff().subscribe(
       value => this.students = value
     );
   }

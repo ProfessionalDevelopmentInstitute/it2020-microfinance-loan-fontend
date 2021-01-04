@@ -1,7 +1,15 @@
 <div class="w3-padding">
-  <h1> Customer List</h1>
-  <form>
-    <table class="w3-table w3-striped w3-border">
+  <h1 style="padding-left: 10px;"> Customer List</h1>
+  <div class="w3-container">
+    <button type="submit" value="add" class="w3-button" style="border-radius: 25px;background-color: #e07b39;"
+            routerLink="/customer" routerLinkActive="active">Add customer</button>
+    <form class="w3-form" [formGroup]="myF" (ngSubmit)="searchName()">
+      <input class="w3-input w3-border-deep-orange right_content" type="text" formControlName="customerName">&nbsp;
+      <button type="submit"  class="w3-button" value="Search"  style="border-radius: 25px;background-color: #e07b39;">Search</button>
+    </form>
+  </div>
+  <br>
+    <table class="w3-table w3-striped w3-border content">
       <tr>
         <th>Customer ID</th>
         <th>Member ID</th>
@@ -11,26 +19,22 @@
         <th>Phone</th>
         <th>Occupation</th>
         <th></th>
-        <th></th>
       </tr>
       <tr *ngFor="let c of customers">
         <td>{{c.id}}</td>
-        <td>{{c.memberId}}</td>
+        <td>{{c.member.id}}</td>
         <td>{{c.customerName}}</td>
-        <td>{{c.customerNRCNo}}</td>
+        <td>{{c.customerNRC}}</td>
         <td>{{c.customerAddress}}</td>
         <td>{{c.customerPhone}}</td>
         <td>{{c.customerOccupation}}</td>
         <td>
-          <button type="submit" value="Update" class="w3-button w3-light-green">Update</button>
-        </td>
-        <td>
+          <button type="submit" value="Update" class="w3-button w3-light-green w3-margin-left"
+                  routerLink="/customer-update/{{c.id}}">Update</button>
           <button type="submit" value="Back" routerLink="/main" routerLinkActive="active" class="w3-button w3-black w3-margin-left"> Back </button>
         </td>
       </tr>
     </table>
-  </form>
-
 </div>
 
 <div class="w3-half">

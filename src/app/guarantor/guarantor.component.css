@@ -1,9 +1,7 @@
 .content{
 
   padding-left: 30px;
-  /*margin-left: 300px;*/
-  /*margin-top: 10px;*/
-  background-image: linear-gradient(to bottom, #f298e6, #d78de8, #b884e9, #917cea, #5e76e9);
+  background-color: #e07b39;
 }
 input{
   width: 500px;

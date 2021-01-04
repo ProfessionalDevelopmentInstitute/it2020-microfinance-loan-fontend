@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {LoginModel} from '../model/Login';
 import {HttpBackend, HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {StaffModel} from '../model/StaffModel';
 
 
@@ -10,6 +10,10 @@ import {StaffModel} from '../model/StaffModel';
 })
 export class LoginService {
   private httpClient: HttpClient;
+  isAuth: Subject<boolean> = new Subject<boolean>();
+
+  staffModel: StaffModel;
+  credential: string;
 
   constructor(httpBackend: HttpBackend) {
     this.httpClient = new HttpClient(httpBackend);

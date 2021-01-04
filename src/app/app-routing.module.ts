@@ -15,6 +15,8 @@ import {MemberUpdateComponent} from './member/member-update/member-update.compon
 import {CustomerListComponent} from './customer/customer-list/customer-list.component';
 import {LoanListComponent} from './loan/loan-list/loan-list.component';
 import {StaffListComponent} from './staff/staff-list/staff-list.component';
+import {LoanComponent} from './loan/loan.component';
+import {UpdateCustomerComponent} from './customer/update-customer/update-customer.component';
 
 
 
@@ -36,7 +38,9 @@ const routes: Routes = [
   {path : 'member-update/:id' , component: MemberUpdateComponent},
   { path : 'customer-list', component: CustomerListComponent},
   {path: 'loan-list' , component: LoanListComponent},
-  {path: 'staff-list' , component: StaffListComponent}
+  {path: 'staff-list' , component: StaffListComponent},
+  {path: 'loan' , component: LoanComponent},
+  {path: 'customer-update/:id' , component: UpdateCustomerComponent}
   ];
 
 @NgModule({
@@ -46,4 +50,4 @@ const routes: Routes = [
 export class AppRoutingModule {HomeComponent ; MainComponent; CustomerComponent ; StaffComponent;
  GuarantorComponent ; MemberComponent; GuarantorListComponent  ;  LoanPolicyComponent; LoanPolicyListComponent;
   MemberListComponent; UpdateGuarantorComponent; MemberUpdateComponent; CustomerListComponent; LoanListComponent;
-  StaffListComponent; }
+  StaffListComponent; LoanComponent; UpdateCustomerComponent; }

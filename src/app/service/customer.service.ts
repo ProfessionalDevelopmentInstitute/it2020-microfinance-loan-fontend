@@ -12,22 +12,22 @@ export class CustomerService {
 
   constructor(private http: HttpClient) { }
  getCustomerList(): Observable<ResponseModel> {
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/customers');
+    return this.http.get<ResponseModel>('http://localhost:9000/api/customers');
   }
 
   getCustomerById(id: number): Observable<ResponseModel> {
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/customers/' + id);
+    return this.http.get<ResponseModel>('http://localhost:9000/api/customers/' + id);
   }
 
-  createCustomer(customer: Customer): Observable<ResponseModel> {
-    return this.http.post<ResponseModel>('http://localhost:9000/mdls/customer/', customer);
+  createCustomer(customer: Customer): Observable<any> {
+    return this.http.post('http://localhost:9000/api/customer', customer);
   }
 
   updateCustomer(customer: Customer): Observable<any> {
-    return this.http.put('http://localhost:9000/mdls/customer/', customer);
+    return this.http.put('http://localhost:9000/api/customer/', customer);
   }
 
-  getCustomerName(customerName: string): Observable<any>{
-    return this.http.get('http://localhost:9000/mdls/guarantors/search?guarantorName' + customerName);
+  search(customerName: string): Observable<Customer[]>{
+    return this.http.get<Customer[]>('http://localhost:9000/api/customers/search/{customerName}?customerName=' + customerName);
   }
 }

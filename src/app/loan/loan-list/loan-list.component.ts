@@ -12,8 +12,11 @@ export class LoanListComponent implements OnInit {
   constructor(public lService: LoanService) { }
   ngOnInit(): void {
     this.lService.getLoanList().subscribe(
-      value => this.loans = value.result,
-      error => console.log(error),
+      value => {
+        this.loans = value.result;
+        console.log(value.result);
+      },
+          error => console.log(error),
       () => console.log('Finished Request Procress')
     );
 

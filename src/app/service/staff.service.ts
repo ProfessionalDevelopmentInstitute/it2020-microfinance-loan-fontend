@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {StaffModel} from '../model/StaffModel';
+import {ResponseModel} from '../model/response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {StaffModel} from '../model/StaffModel';
 export class StaffService {
 
   constructor(private http: HttpClient) { }
-  public getAll(): Observable<StaffModel[]> {
+  public getStaff(): Observable<StaffModel[]> {
     return this.http.get<StaffModel[]>('http://localhost:9000/api/staff');
   }
 

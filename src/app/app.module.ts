@@ -25,6 +25,7 @@ import { CustomerListComponent } from './customer/customer-list/customer-list.co
 import { LoanComponent } from './loan/loan.component';
 import { LoanListComponent } from './loan/loan-list/loan-list.component';
 import { StaffListComponent } from './staff/staff-list/staff-list.component';
+import { UpdateCustomerComponent } from './customer/update-customer/update-customer.component';
 
 
 
@@ -51,6 +52,7 @@ import { StaffListComponent } from './staff/staff-list/staff-list.component';
     LoanComponent,
     LoanListComponent,
     StaffListComponent,
+    UpdateCustomerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+.content th{
+  background-color: #e07b39;
+}
+.content{
+  border-collapse: collapse;
+  width: 99%;
+  margin-left: 10px;
+  padding-right: 20px;
+}
+.content td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 5px;
+}
+.content tr:hover{
+  background-color: #e07b39 ;
+}
+.right_content{
+  width: 200px;
+  display: inline-block;
+  margin-left: 820px;
+}

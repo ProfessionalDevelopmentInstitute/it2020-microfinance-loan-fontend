@@ -1,5 +1,5 @@
-export class Member{
-  constructor(public id: number, public memberGroupName: string, public memberType: string) {
-
-  }
+export interface Member{
+   id?: number;
+  memberGroupName: string;
+   memberType: string;
 }

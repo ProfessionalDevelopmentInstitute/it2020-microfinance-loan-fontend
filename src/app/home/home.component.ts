@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
     };
     this.loginService.signIn(loginModel).subscribe(
       value => {
+        console.log(value.staffEmail);
         this.router.navigate(['main']);
       }
     );

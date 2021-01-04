@@ -25,7 +25,10 @@ export class MemberComponent implements OnInit {
   }
 
   submit(): void {
-    const members: Member =  new Member(this.myForm.value.id , this.myForm.value.memberGroupName, this.myForm.value.memberType);
+    const members: Member = {
+     memberGroupName: this.myForm.value.memberGroupName,
+      memberType: this.myForm.value.memberType
+    };
     console.log(members);
 
     this.mService.createMembers(members).subscribe(

@@ -11,13 +11,13 @@ export class LoanService {
 
   constructor(private http: HttpClient) { }
   getLoanList(): Observable<ResponseModel>{
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/loans');
+    return this.http.get<ResponseModel>('http://localhost:9000/api/loans');
   }
   getLoanbyId(id: number): Observable<ResponseModel>{
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/loans/' + id);
+    return this.http.get<ResponseModel>('http://localhost:9000/api/loans/' + id);
   }
   createLoan( loan: Loan): Observable<any>{
-    return this.http.post('http://localhost:9000/mdls/loan' , loan);
+    return this.http.post('http://localhost:9000/api/loan' , loan);
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {LoanPolicy} from '../../model/loanPolicy';
+import {LoanPaymentPolicy} from '../../model/loanPaymentPolicy';
 import {LoanPolicyListService} from '../../service/loan-policy-list.service';
 
 @Component({
@@ -8,7 +8,7 @@ import {LoanPolicyListService} from '../../service/loan-policy-list.service';
   styleUrls: ['./loan-policy-list.component.css']
 })
 export class LoanPolicyListComponent implements OnInit {
-loanPolicies: LoanPolicy[];
+loanPolicies: LoanPaymentPolicy[];
   constructor(private lPService: LoanPolicyListService) { }
 
   ngOnInit(): void {

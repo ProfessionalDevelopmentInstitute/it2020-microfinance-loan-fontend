@@ -4,7 +4,7 @@
   margin-left: 500px;
   border-radius: 25px;
   border: 1px solid #f2f2f2;
-  background-image: linear-gradient(to bottom, #f298e6, #d78de8, #b884e9, #917cea, #5e76e9);
+  background-color: #e07b39;
 }
 #footer{
   width: 500px;
@@ -14,7 +14,7 @@
  /*background-color: #ccffff;*/
   width: 100px;
 border-radius: 10px;
-  background-color: #F298E6;
+  background-color:#e07b39;
 }
 .box {
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),

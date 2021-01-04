@@ -13,23 +13,23 @@ export class GuarantorService {
   }
 
   getGuarantorList(): Observable<ResponseModel> {
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/guarantors');
+    return this.http.get<ResponseModel>('http://localhost:9000/api/guarantors');
   }
 
   getGuarantorById(id: number): Observable<ResponseModel> {
-    return this.http.get<ResponseModel>('http://localhost:9000/mdls/guarantors/' + id);
+    return this.http.get<ResponseModel>('http://localhost:9000/api/guarantors/' + id);
   }
 
   createGuarantor(guarantor: Guarantor): Observable<any> {
-    return this.http.post('http://localhost:9000/mdls/guarantor', guarantor);
+    return this.http.post('http://localhost:9000/api/guarantor', guarantor);
   }
 
   updateGuarantor(guarantor: Guarantor): Observable<any> {
-    return this.http.put('http://localhost:9000/mdls/guarantors/', guarantor);
+    return this.http.put('http://localhost:9000/api/guarantors/', guarantor);
   }
 
-  getByGuarantorName(guarantorName: string): Observable<any>{
-    return this.http.get('http://localhost:9000/mdls/guarantors/search?guarantorName' + guarantorName);
+  getByGuarantorName(guarantorName: string): Observable<Guarantor[]>{
+    return this.http.get<Guarantor[]>('http://localhost:9000/api/guarantors/search?guarantorName=' + guarantorName);
   }
 
 }

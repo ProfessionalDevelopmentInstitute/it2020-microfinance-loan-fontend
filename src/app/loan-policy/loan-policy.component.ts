@@ -3,7 +3,8 @@ import {NgForm} from '@angular/forms';
 import {LoanPolicyListService} from '../service/loan-policy-list.service';
 import {Router} from '@angular/router';
 class LoanPolicy{
-  constructor(public id: number , public loanAmount: number, public loanInterest: number, public monthlyPayment: number, public months: number) {
+  constructor(public id: number , public loanAmount: number, public loanInterest: number, public monthlyPayment: number,
+              public months: number) {
   }
 }
 

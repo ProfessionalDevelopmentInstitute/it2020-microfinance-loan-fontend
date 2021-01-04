@@ -12,10 +12,9 @@
   border-radius: 30px;
   /*box-shadow: 5px 5px ;*/
 }
-#image{
-  float: left;
-  width: 70px;
-  height: 70px;
+.image{
+  width: 40px;
+  height: 40px;
 }
 .box {
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.040),
@@ -41,4 +40,18 @@
    font-weight: lighter;
   background-image: linear-gradient(to top, #e355d1, #e056d8, #dc57df, #d858e6, #d35aed);
   color : black;
+}
+.title{
+  margin-left: 450px;
+}
+
+table td{
+  border: 1px solid white;
+  width:30%;
+  background-color: white;
+   padding-left: 10px;
+}
+table tr{
+  padding-left: 10px;
+  padding-right: 10px;
 }
